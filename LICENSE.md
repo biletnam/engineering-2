@@ -1,8 +1,6 @@
-The MIT License (MIT)
-==================
+# MIT License
 
-Puff Copyright &copy; 2016 [eustasy](https://eustasy.org)
-Custom Content Copyright &copy; 2016 [Lewis Goddard](https://lewisgoddard.me.uk)
+Copyright © 2018 [Banham Poultry UK](http://banhampoultryuk.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
