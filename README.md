@@ -2,28 +2,16 @@
 
 The internal engineering ticketing system hosted at [engineering.banhampoultryuk.com.local](http://engineering.banhampoultryuk.com.local/)
 
-Development hosted at [banham.visualstudio.com/Engineering Ticket System](https://banham.visualstudio.com/Engineering%20Ticket%20System)
-
-228,275 lines of code
+Development hosted at [github.com/BanhamPoultryUK/engineering-2](https://github.com/BanhamPoultryUK/engineering-2)
 
 # Technologies
 - Windows
-- IIS
-- ASPX
-- SQL
+- PHP
+- MySQL
+- MSSQL
 - HTML
 - CSS
 - JavaScript
-
-# Getting Started
-1. Install Visual Studio 2017 and the Git extension.
-2. Connect to your Visual Studio account.
-3. Clone the project you require.
-
-# Future Development
-1. Make changes within the project.
-2. Commit under `Changes`
-3. Push and Pull under `Sync`
 
 # Staging
 There is no staging environment.
