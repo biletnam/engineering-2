@@ -41,6 +41,8 @@ Push your changes and pull the repository on `BanLinux`
    - Machines
      - Create
      - Edit
+       - Move between Departments/Lines (See [#3](https://github.com/BanhamPoultryUK/engineering-2/issues/3))
+       - Change AssetTag (See [#4](https://github.com/BanhamPoultryUK/engineering-2/issues/4))
      - Disable
  - Tickets
    - File
@@ -51,6 +53,7 @@ Push your changes and pull the repository on `BanLinux`
      - Safety Checks
    - Index
      - List All
+     - Soft Search by AssetTag / Machine Description (See [#5](https://github.com/BanhamPoultryUK/engineering-2/issues/5))
      - Filter by Department
      - Filter by Line
      - Filter by Machine (AssetTag)
