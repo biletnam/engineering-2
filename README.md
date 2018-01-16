@@ -29,20 +29,26 @@ Push your changes and pull the repository on `BanLinux`
    - Log In
    - Log Out
    - Log Out Everywhere
- - Lines
-   - Create*
-   - Edit*
-   - Disable*
- - Machines
-   - Create*
-   - Edit*
-   - Disable*
+ - Factory Management (See [#2](https://github.com/BanhamPoultryUK/engineering-2/issues/2))
+   - Departments
+     - Create
+     - Edit
+     - Disable
+   - Lines
+     - Create
+     - Edit
+     - Disable
+   - Machines
+     - Create
+     - Edit
+     - Disable
  - Tickets
    - File
    - Assign Engineers
    - Comment
    - Change Status
-   - Safety Checks*
+     - Previous date (See [#1](https://github.com/BanhamPoultryUK/engineering-2/issues/1))
+     - Safety Checks
    - Index
      - List All
      - Filter by Department
