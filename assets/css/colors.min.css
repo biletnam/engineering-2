@@ -1,0 +1,135 @@
+/*! Colors.css | MIT License | https://github.com/eustasy/colors.css */
+/* Colors from http://flatuicolors.com/ */
+
+/* Color */
+/* Light */
+/* Dark  */
+
+
+
+/* Backgrounds */
+
+/* Baseline */
+.background-inherit { background: inherit !important; }
+.background-transparent { background: transparent !important; }
+
+/* Turquoise */
+.background-turquoise { background: #1ABC9C !important; }
+.background-green-sea { background: #16A085 !important; }
+
+/* Green */
+.background-emerald { background: #2ECC71 !important; }
+.background-nephritis { background: #27AE60 !important; }
+
+/* Blue */
+.background-peter-river { background: #3498DB !important; }
+.background-belize-hole { background: #2980B9 !important; }
+
+/* Purple */
+.background-amethyst { background: #9B59B6 !important; }
+.background-wisteria { background: #8E44AD !important; }
+
+/* Navy */
+.background-wet-asphalt { background: #34495E !important; }
+.background-midnight-blue { background: #2C3E50 !important; }
+
+/* Yellow */
+.background-sun-flower { background: #F1C40F !important; }
+.background-orange { background: #F39C12 !important; }
+
+/* Orange */
+.background-carrot { background: #E67E22 !important; }
+.background-pumpkin { background: #D35400 !important; }
+
+/* Red */
+.background-alizarin { background: #E74C3C !important; }
+.background-pomegranate { background: #C0392B !important; }
+
+/* Greys */
+.background-clouds { background: #ECF0F1 !important; }
+.background-silver { background: #BDC3C7 !important; }
+.background-concrete { background: #95A5A6 !important; }
+.background-asbestos { background: #7F8C8D !important; }
+
+/* White - Grey - Black */
+.background-f, .background-white { background: #fff !important; }
+.background-d { background: #ddd !important; }
+.background-e { background: #eee !important; }
+.background-c { background: #ccc !important; }
+.background-b { background: #bbb !important; }
+.background-a { background: #aaa !important; }
+.background-9, .background-nine { background: #999 !important; }
+.background-8, .background-eight { background: #888 !important; }
+.background-7, .background-seven { background: #777 !important; }
+.background-6, .background-six { background: #666 !important; }
+.background-5, .background-five { background: #555 !important; }
+.background-4, .background-four { background: #444 !important; }
+.background-3, .background-three { background: #333 !important; }
+.background-2, .background-two { background: #222 !important; }
+.background-1, .background-one { background: #111 !important; }
+.background-0, .background-zero, .background-black { background: #000 !important; }
+
+
+
+
+/* Colors */
+
+/* Baseline */
+.color-inherit { color: inherit }
+.color-transparent { color: transparent !important; }
+
+/* Turquoise */
+.color-turquoise { color: #1ABC9C !important; }
+.color-green-sea { color: #16A085 !important; }
+
+/* Green */
+.color-emerald { color: #2ECC71 !important; }
+.color-nephritis { color: #27AE60 !important; }
+
+/* Blue */
+.color-peter-river { color: #3498DB !important; }
+.color-belize-hole { color: #2980B9 !important; }
+
+/* Purple */
+.color-amethyst { color: #9B59B6 !important; }
+.color-wisteria { color: #8E44AD !important; }
+
+/* Navy */
+.color-wet-asphalt { color: #34495E !important; }
+.color-midnight-blue { color: #2C3E50 !important; }
+
+/* Yellow */
+.color-sun-flower { color: #F1C40F !important; }
+.color-orange { color: #F39C12 !important; }
+
+/* Orange */
+.color-carrot { color: #E67E22 !important; }
+.color-pumpkin { color: #D35400 !important; }
+
+/* Red */
+.color-alizarin { color: #E74C3C !important; }
+.color-pomegranate { color: #C0392B !important; }
+
+/* Greys */
+.color-clouds { color: #ECF0F1 !important; }
+.color-silver { color: #BDC3C7 !important; }
+.color-concrete { color: #95A5A6 !important; }
+.color-asbestos { color: #7F8C8D !important; }
+
+/* White - Grey - Black */
+.color-f, .color-white { color: #fff !important; }
+.color-d { color: #ddd !important; }
+.color-e { color: #eee !important; }
+.color-c { color: #ccc !important; }
+.color-b { color: #bbb !important; }
+.color-a { color: #aaa !important; }
+.color-9, .color-nine { color: #999 !important; }
+.color-8, .color-eight { color: #888 !important; }
+.color-7, .color-seven { color: #777 !important; }
+.color-6, .color-six { color: #666 !important; }
+.color-5, .color-five { color: #555 !important; }
+.color-4, .color-four { color: #444 !important; }
+.color-3, .color-three { color: #333 !important; }
+.color-2, .color-two { color: #222 !important; }
+.color-1, .color-one { color: #111 !important; }
+.color-0, .color-zero, .color-black { color: #000 !important; }

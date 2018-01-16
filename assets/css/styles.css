@@ -1,0 +1,20 @@
+nav {
+    display: inline-block;
+    float: right;
+    margin-top: 2em;
+}
+
+a {
+	color: #043359;
+	text-decoration: none;
+}
+
+.assigned-to-me {
+    background: #e74c3c;
+}
+
+@media print {
+    header, nav, footer, .dont-print {
+		display: none;
+	}
+}

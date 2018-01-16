@@ -1,0 +1,9 @@
+*~
+*.custom.php
+_puff/backups/*
+assets/images/uploads/*.png
+assets/images/uploads/*.jpg
+assets/images/uploads/*.pdf
+blog.json
+feed.xml
+sitemap.xml
