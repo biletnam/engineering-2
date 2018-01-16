@@ -6,7 +6,7 @@ Development hosted at [github.com/BanhamPoultryUK/engineering-2](https://github.
 
 # Technologies
 - Windows
-- PHP
+- PHP 5.6
 - MySQL
 - MSSQL
 - HTML
