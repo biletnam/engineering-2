@@ -30,7 +30,7 @@ if (
 	// Insert Comment
 	// TODO Previous
 	$Comment['Actual'] = $Comment['Username'].' changed the ticket status to <span class="status-tag color-white background-'.$Status['Color'].'">'.$Comment['Status'].'</span>';
-	if ( $Comment['Status'] =='Completed' ) {
+	if ( $Comment['Status'] =='Complete' ) {
 		$Comment['Actual'] .= PHP_EOL.PHP_EOL;
 		$Comment['Actual'] .= '<input type="checkbox" name="debris" checked disabled> Has all debris including redundant parts been cleared away and disposed of?  '.PHP_EOL;
 		$Comment['Actual'] .= '<input type="checkbox" name="tools" checked disabled> Have all tools been accounted for?  '.PHP_EOL;

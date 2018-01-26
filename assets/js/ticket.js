@@ -15,7 +15,7 @@ $(function () {
 		});
 	});
 	$('select[name="status"]').change(function() {
-		if ( $('select[name="status"]').val() == 'Completed' ) {
+		if ( $('select[name="status"]').val() == 'Complete' ) {
 			$('.js-target-sign-off').html('\
 						<p><input type="checkbox" name="debris" required> Has all debris including redundant parts been cleared away and disposed of?</p>\
 						<p><input type="checkbox" name="tools" required> Have all tools been accounted for?</p>\
