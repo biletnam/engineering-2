@@ -30,15 +30,18 @@ if (
 	// Insert Comment
 	// TODO Previous
 	$Comment['Actual'] = $Comment['Username'].' changed the ticket status to <span class="status-tag color-white background-'.$Status['Color'].'">'.$Comment['Status'].'</span>';
-	if ( $Comment['Status'] =='Signed Off' ) {
+	if ( $Comment['Status'] =='Completed' ) {
 		$Comment['Actual'] .= PHP_EOL.PHP_EOL;
-		$Comment['Actual'] .= '<input type="checkbox" name="debris" required checked disabled> Has all debris including redundant parts been cleared away and disposed of?  '.PHP_EOL;
-		$Comment['Actual'] .= '<input type="checkbox" name="tools" required checked disabled> Have all tools been accounted for?  '.PHP_EOL;
-		$Comment['Actual'] .= '<input type="checkbox" name="parts" required checked disabled> Have any parts found missing been reported?  '.PHP_EOL;
-		$Comment['Actual'] .= '<input type="checkbox" name="equipment" required checked disabled> Has all equipment used for access, such as ladders etc. been cleared and stored?  '.PHP_EOL;
+		$Comment['Actual'] .= '<input type="checkbox" name="debris" checked disabled> Has all debris including redundant parts been cleared away and disposed of?  '.PHP_EOL;
+		$Comment['Actual'] .= '<input type="checkbox" name="tools" checked disabled> Have all tools been accounted for?  '.PHP_EOL;
+		$Comment['Actual'] .= '<input type="checkbox" name="parts" checked disabled> Have any parts found missing been reported?  '.PHP_EOL;
+		$Comment['Actual'] .= '<input type="checkbox" name="equipment" checked disabled> Has all equipment used for access, such as ladders etc. been cleared and stored?  '.PHP_EOL;
+		$SQL = 'UPDATE `Tickets` SET `CompletedTime`=CURRENT_TIMESTAMP, `CompletedBy`=\''.$Sitewide['Authenticated']['Member'].'\' WHERE `Ticket`=\''.$Comment['Ticket'].'\';';
+		$Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
+	} else if ( $Comment['Status'] =='SignedOff' ) {
 		$SQL = 'UPDATE `Tickets` SET `SignedOffTime`=CURRENT_TIMESTAMP, `SignedOffBy`=\''.$Sitewide['Authenticated']['Member'].'\' WHERE `Ticket`=\''.$Comment['Ticket'].'\';';
 		$Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
-	}
+    }
 	$Comment_ID = comment_on_ticket($Comment['Ticket'], 'SYSTEM', $Comment['Actual']);
 }
 header('Location: '.$Sitewide['Settings']['Site Root'].'ticket.php?id='.$Comment['Ticket'].'#comment-'.$Comment_ID, true, 302);
