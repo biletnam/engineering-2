@@ -43,7 +43,7 @@ if (
 	} else if ( $Comment['Status'] =='Signed Off' ) {
 		$SQL = 'UPDATE `Tickets` SET `SignedOffTime`=CURRENT_TIMESTAMP, `SignedOffBy`=\''.$Sitewide['Authenticated']['Member'].'\' WHERE `Ticket`=\''.$Comment['Ticket'].'\';';
 		$Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
-    }
+	}
 	$Comment_ID = comment_on_ticket($Comment['Ticket'], 'SYSTEM', $Comment['Actual']);
 }
 header('Location: '.$Sitewide['Settings']['Site Root'].'ticket.php?id='.$Comment['Ticket'].'#comment-'.$Comment_ID, true, 302);
