@@ -22,7 +22,7 @@ $(function () {
 						<p><input type="checkbox" name="tools" id="complete-tools" required> <label for="complete-tools">Have all tools been accounted for?</label></p>\
 						<p><input type="checkbox" name="parts" id="complete-parts" required> <label for="complete-parts">Have any parts found missing been reported?</label></p>\
 						<p><input type="checkbox" name="equipment" id="complete-equipment" required> <label for="complete-equipment">Has all equipment used for access, such as ladders etc. been cleared and stored?</label></p>\
-						<p><input type="date" name="time" id="complete-time" required value="' + today + '"> <label for="complete-time">If this job was completed before today, change the date here.</label></p>\
+						<p><input type="date" name="time" id="complete-time" required value="' + today.toLocaleString() + '"> <label for="complete-time">If this job was completed before today, change the date here.</label></p>\
 					');
 		} else {
 			$('.js-target-complete').empty();
