@@ -16,7 +16,7 @@ $(function () {
 	});
 	$('select[name="status"]').change(function() {
 		if ( $('select[name="status"]').val() == 'Complete' ) {  
-			$('.js-target-complete input').attr('required');
+			$('.js-target-complete input').attr('required', true);
 			$('.js-target-complete').show();
 		} else {
 			$('.js-target-complete input').removeAttr('required');
