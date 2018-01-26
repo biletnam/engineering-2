@@ -180,16 +180,16 @@ ORDER BY `Names`.`Value` ASC";
 				?>
 			</select>
 			<div class="js-target-complete" style="display:none;">
-				<p><input type="checkbox" name="debris" id="complete-debris" required> <label for="complete-debris">Has all debris including redundant parts been cleared away and disposed of?</label></p>
-				<p><input type="checkbox" name="tools" id="complete-tools" required> <label for="complete-tools">Have all tools been accounted for?</label></p>
-				<p><input type="checkbox" name="parts" id="complete-parts" required> <label for="complete-parts">Have any parts found missing been reported?</label></p>
-				<p><input type="checkbox" name="equipment" id="complete-equipment" required> <label for="complete-equipment">Has all equipment used for access, such as ladders etc. been cleared and stored?</label></p>
+				<p><input type="checkbox" name="debris" id="complete-debris"> <label for="complete-debris">Has all debris including redundant parts been cleared away and disposed of?</label></p>
+				<p><input type="checkbox" name="tools" id="complete-tools"> <label for="complete-tools">Have all tools been accounted for?</label></p>
+				<p><input type="checkbox" name="parts" id="complete-parts"> <label for="complete-parts">Have any parts found missing been reported?</label></p>
+				<p><input type="checkbox" name="equipment" id="complete-equipment"> <label for="complete-equipment">Has all equipment used for access, such as ladders etc. been cleared and stored?</label></p>
 				<p>
 					<label for="complete-time">If this job was completed before today, change the date here.</label><br>
-					<input type="date" name="time" id="complete-time" required
-						   min="<?php echo date ('Y-m-d', strtotime($Ticket['CreatedTime'])); ?>"
-						   max="<?php echo date ('Y-m-d'); ?>"
-						   value="<?php echo date ('Y-m-d'); ?>">
+					<input type="date" name="time" id="complete-time"
+						   min="<?php echo date('Y-m-d', strtotime($Ticket['CreatedTime'])); ?>"
+						   max="<?php echo date('Y-m-d'); ?>"
+						   value="<?php echo date('Y-m-d'); ?>">
 				</p>
 			</div>
 			<input class="dont-print" type="submit" value="Change">
