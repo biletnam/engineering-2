@@ -187,7 +187,7 @@ ORDER BY `Names`.`Value` ASC";
 				<p>
 					<label for="complete-time">If this job was completed before today, change the date here.</label><br>
 					<input type="date" name="time" id="complete-time" required
-						   min="<?php echo date ('Y-m-d', $Ticket['CreatedTime']); ?>"
+						   min="<?php var_dump($Ticket['CreatedTime']); echo date ('Y-m-d', $Ticket['CreatedTime']); ?>"
 						   max="<?php echo date ('Y-m-d'); ?>"
 						   value="<?php echo date ('Y-m-d'); ?>">
 				</p>
