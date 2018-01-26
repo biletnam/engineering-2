@@ -37,11 +37,14 @@ if (
 		$Comment['Actual'] .= '<input type="checkbox" name="parts" checked disabled> Have any parts found missing been reported?  '.PHP_EOL;
 		$Comment['Actual'] .= '<input type="checkbox" name="equipment" checked disabled> Has all equipment used for access, such as ladders etc. been cleared and stored?  '.PHP_EOL;
 		$SQL = 'UPDATE `Tickets` SET `CompletedTime`=CURRENT_TIMESTAMP, `CompletedBy`=\''.$Sitewide['Authenticated']['Member'].'\' WHERE `Ticket`=\''.$Comment['Ticket'].'\';';
+        var_dump($SQL);
 		$Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
 	} else if ( $Comment['Status'] =='SignedOff' ) {
 		$SQL = 'UPDATE `Tickets` SET `SignedOffTime`=CURRENT_TIMESTAMP, `SignedOffBy`=\''.$Sitewide['Authenticated']['Member'].'\' WHERE `Ticket`=\''.$Comment['Ticket'].'\';';
+        var_dump($SQL);
 		$Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
     }
 	$Comment_ID = comment_on_ticket($Comment['Ticket'], 'SYSTEM', $Comment['Actual']);
 }
+exit;
 header('Location: '.$Sitewide['Settings']['Site Root'].'ticket.php?id='.$Comment['Ticket'].'#comment-'.$Comment_ID, true, 302);
