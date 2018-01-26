@@ -179,7 +179,7 @@ ORDER BY `Names`.`Value` ASC";
 					}
 				?>
 			</select>
-			<div class="js-target-sign-off"></div>
+			<div class="js-target-complete"></div>
 			<input class="dont-print" type="submit" value="Change">
 		</form>
 		<?php } ?>

@@ -16,14 +16,16 @@ $(function () {
 	});
 	$('select[name="status"]').change(function() {
 		if ( $('select[name="status"]').val() == 'Complete' ) {
-			$('.js-target-sign-off').html('\
-						<p><input type="checkbox" name="debris" required> Has all debris including redundant parts been cleared away and disposed of?</p>\
-						<p><input type="checkbox" name="tools" required> Have all tools been accounted for?</p>\
-						<p><input type="checkbox" name="parts" required> Have any parts found missing been reported?</p>\
-						<p><input type="checkbox" name="equipment" required> Has all equipment used for access, such as ladders etc. been cleared and stored?</p>\
+            var today = Date.now();  
+			$('.js-target-complete').html('\
+						<p><input type="checkbox" name="debris" id="complete-debris" required> <label for="complete-debris">Has all debris including redundant parts been cleared away and disposed of?</label></p>\
+						<p><input type="checkbox" name="tools" id="complete-tools" required> <label for="complete-tools">Have all tools been accounted for?</label></p>\
+						<p><input type="checkbox" name="parts" id="complete-parts" required> <label for="complete-parts">Have any parts found missing been reported?</label></p>\
+						<p><input type="checkbox" name="equipment" id="complete-equipment" required> <label for="complete-equipment">Has all equipment used for access, such as ladders etc. been cleared and stored?</label></p>\
+						<p><input type="date" name="time" id="complete-time" required value="' + today + '"> <label for="complete-time">If this job was completed before today, change the date here.</label></p>\
 					');
 		} else {
-			$('.js-target-sign-off').empty();
+			$('.js-target-complete').empty();
 		}
 	});
 });

@@ -4,6 +4,7 @@ require_once __DIR__.'/../_puff/sitewide.php';
 $Comment['Username'] = Puff_Member_Key_Value($Sitewide['Database']['Connection'], $Sitewide['Authenticated']['Member'], 'Name');
 $Comment['Status'] = htmlentities($_POST['status'], ENT_QUOTES, 'UTF-8');
 $Comment['Ticket'] = htmlentities($_POST['ticket'], ENT_QUOTES, 'UTF-8');
+$Comment['Time'] = htmlentities($_POST['time'], ENT_QUOTES, 'UTF-8');
 
 if (
 	(
@@ -36,7 +37,8 @@ if (
 		$Comment['Actual'] .= '<input type="checkbox" name="tools" checked disabled> Have all tools been accounted for?  '.PHP_EOL;
 		$Comment['Actual'] .= '<input type="checkbox" name="parts" checked disabled> Have any parts found missing been reported?  '.PHP_EOL;
 		$Comment['Actual'] .= '<input type="checkbox" name="equipment" checked disabled> Has all equipment used for access, such as ladders etc. been cleared and stored?  '.PHP_EOL;
-		$SQL = 'UPDATE `Tickets` SET `CompletedTime`=CURRENT_TIMESTAMP, `CompletedBy`=\''.$Sitewide['Authenticated']['Member'].'\' WHERE `Ticket`=\''.$Comment['Ticket'].'\';';
+		$Comment['Actual'] .= 'This ticket was completed on '.$Comment['Time'].'.'.PHP_EOL;
+		$SQL = 'UPDATE `Tickets` SET `CompletedTime`="'.$Comment['Time'].'", `CompletedBy`=\''.$Sitewide['Authenticated']['Member'].'\' WHERE `Ticket`=\''.$Comment['Ticket'].'\';';
 		$Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
 	} else if ( $Comment['Status'] =='Signed Off' ) {
 		$SQL = 'UPDATE `Tickets` SET `SignedOffTime`=CURRENT_TIMESTAMP, `SignedOffBy`=\''.$Sitewide['Authenticated']['Member'].'\' WHERE `Ticket`=\''.$Comment['Ticket'].'\';';
