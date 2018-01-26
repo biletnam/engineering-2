@@ -15,5 +15,5 @@ GROUP BY
 $Result = mysqli_fetch_once($Sitewide['Database']['Connection'], $SQL);
 echo '
 <footer class="faded">
-	<p>Loading '.number_format($Result['Total Size']).' bits of information took '.(microtime(true) - $Sitewide['Request']['Start']).'ms while running on PHP '.phpversion(),'</p>
+	<p>Loading '.number_format($Result['Total Size']).' bits of information took '.round((microtime(true) - $Sitewide['Request']['Start'])*1000).'ms while running on PHP '.phpversion(),'</p>
 </footer>';
