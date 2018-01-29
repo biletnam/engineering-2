@@ -89,9 +89,9 @@
 <?php
 $SQL = 'SELECT *
 FROM `Tickets`
-JOIN `Statuses`
+LEFT JOIN `Statuses`
 	ON `Tickets`.`Status` = `Statuses`.`Status`
-JOIN `Machines`
+LEFT JOIN `Machines`
 	ON `Tickets`.`AssetTag` = `Machines`.`AssetTag`
 WHERE ';
 if (
@@ -156,7 +156,6 @@ if ( $SoftSearch ) {
 	) ';
 }
 $SQL .= 'ORDER BY `Ticket` DESC;';
-var_dump($SQL);
 $Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
 if ( !mysqli_num_rows($Result) ) {
 	echo '<h2>Sorry, there are no tickets for your selected filters.</h2>';
