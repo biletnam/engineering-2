@@ -87,7 +87,16 @@
 <br>
 
 <?php
-$SQL = 'SELECT *
+$SQL = 'SELECT
+	`Tickets`.`Ticket`,
+	`Tickets`.`Title`,
+	`Tickets`.`Department`,
+	`Tickets`.`Line`,
+	`Tickets`.`Machine`,
+	`Tickets`.`AssetTag`,
+	`Tickets`.`CreatedTime`,
+	`Ticket`.`Status`,
+	`Statuses`.`Color`
 FROM `Tickets`
 LEFT JOIN `Statuses`
 	ON `Tickets`.`Status` = `Statuses`.`Status`
