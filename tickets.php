@@ -205,31 +205,33 @@
 $SQL = 'SELECT *
 FROM `Tickets`
 JOIN `Statuses`
-ON `Tickets`.`Status` = `Statuses`.`Status`
+	ON `Tickets`.`Status` = `Statuses`.`Status`
+JOIN `Machines`
+	ON `Tickets`.`AssetTag` = `Machines`.`AssetTag`
 WHERE ';
 if (
 	!empty($SelectedDepartment) &&
 	$SelectedDepartment != '*'
 ) {
-	$SQL .= '`Department`=\''.$SelectedDepartment.'\' AND ';
+	$SQL .= '`Tickets`.`Department`=\''.$SelectedDepartment.'\' AND ';
 }
 if (
 	!empty($SelectedLine) &&
 	$SelectedLine != '*'
 ) {
-	$SQL .= '`Line`=\''.$SelectedLine.'\' AND ';
+	$SQL .= '`Tickets`.`Line`=\''.$SelectedLine.'\' AND ';
 }
 if (
 	!empty($SelectedMachine) &&
 	$SelectedMachine != '*'
 ) {
-	$SQL .= '`AssetTag`=\''.$SelectedMachine.'\' AND ';
+	$SQL .= '`Tickets`.`AssetTag`=\''.$SelectedMachine.'\' AND ';
 }
 if ( 
 	!empty($SelectedAssignee) &&
 	$SelectedAssignee != '*'
 ) {
-	$SQL .= '`Assigned` LIKE \'%'.$SelectedAssignee.'%\' AND ';
+	$SQL .= '`Tickets`.`Assigned` LIKE \'%'.$SelectedAssignee.'%\' AND ';
 }
 $SQL .= '(';
 if ( $Status['New'] ) {
@@ -256,11 +258,20 @@ if ( substr($SQL, -4, 4) == ' OR ' ) {
 $SQL .= ') ';
 if ( $SoftSearch ) {
 	$SQL .= 'AND (
-		`Machine` LIKE \'%'.$SoftSearch.'%\' OR
-		`AssetTag` LIKE \'%'.$SoftSearch.'%\'
+		`Tickets`.`Department`   LIKE \'%'.$SoftSearch.'%\' OR
+		`Tickets`.`Line`         LIKE \'%'.$SoftSearch.'%\' OR
+		`Tickets`.`Machine`      LIKE \'%'.$SoftSearch.'%\' OR
+		`Tickets`.`AssetTag`     LIKE \'%'.$SoftSearch.'%\' OR
+		`Tickets`.`Title`        LIKE \'%'.$SoftSearch.'%\' OR
+		`Tickets`.`Description`  LIKE \'%'.$SoftSearch.'%\' OR
+		`Machines`.`Description` LIKE \'%'.$SoftSearch.'%\' OR
+		`Machines`.`Make`        LIKE \'%'.$SoftSearch.'%\' OR
+		`Machines`.`Model`       LIKE \'%'.$SoftSearch.'%\' OR
+		`Machines`.`SerialNo`    LIKE \'%'.$SoftSearch.'%\'
 	) ';
 }
 $SQL .= 'ORDER BY `Ticket` DESC;';
+var_dump($SQL);
 $Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
 if ( !mysqli_num_rows($Result) ) {
 	echo '<h2>Sorry, there are no tickets for your selected filters.</h2>';
