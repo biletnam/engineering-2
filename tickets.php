@@ -156,6 +156,7 @@ if ( $SoftSearch ) {
 	) ';
 }
 $SQL .= 'ORDER BY `Ticket` DESC;';
+var_dump($SQL);
 $Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
 if ( !mysqli_num_rows($Result) ) {
 	echo '<h2>Sorry, there are no tickets for your selected filters.</h2>';
