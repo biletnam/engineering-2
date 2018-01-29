@@ -95,7 +95,7 @@ $SQL = 'SELECT
 	`Tickets`.`Machine`,
 	`Tickets`.`AssetTag`,
 	`Tickets`.`CreatedTime`,
-	`Ticket`.`Status`,
+	`Tickets`.`Status`,
 	`Statuses`.`Color`
 FROM `Tickets`
 LEFT JOIN `Statuses`
