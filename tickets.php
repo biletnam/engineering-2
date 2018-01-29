@@ -67,9 +67,15 @@
 	}
 
 	if ( isset($_GET['assignee']) ) {
-		$SelectedAssignee = htmlentities($_GET['assignee'], ENT_QUOTES, 'UTF-8');;
+		$SelectedAssignee = htmlentities($_GET['assignee'], ENT_QUOTES, 'UTF-8');
 	} else {
 		$SelectedAssignee = false;
+	}
+
+	if ( isset($_GET['soft-search']) ) {
+		$SoftSearch = htmlentities($_GET['soft-search'], ENT_QUOTES, 'UTF-8');
+	} else {
+		$SoftSearch = false;
 	}
 
 ?>
@@ -189,6 +195,8 @@
 		?>
 	</select>
 	&emsp;
+	<input name="soft-search" type="text" placeholder="Machine details" value="<?php echo $SoftSearch; ?>">
+	&emsp;
 	<button type="submit"><i class="fa fa-search"></i> Search</button>
 </form>
 <br>
@@ -245,7 +253,14 @@ if ( $Status['Cancelled'] ) {
 if ( substr($SQL, -4, 4) == ' OR ' ) {
 	$SQL = substr($SQL, 0, -4);
 }
-$SQL .= ') ORDER BY `Ticket` DESC;';
+$SQL .= ') ';
+if ( $SoftSearch ) {
+	$SQL .= 'AND (
+		`Machine` LIKE \'%'.$SoftSearch.'%\' OR
+		`AssetTag` LIKE \'%'.$SoftSearch.'%\'
+	) ';
+}
+$SQL .= 'ORDER BY `Ticket` DESC;';
 $Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
 if ( !mysqli_num_rows($Result) ) {
 	echo '<h2>Sorry, there are no tickets for your selected filters.</h2>';
