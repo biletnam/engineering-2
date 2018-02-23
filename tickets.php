@@ -73,7 +73,7 @@
 	}
 
 	if ( isset($_GET['soft-search']) ) {
-		$SoftSearch = htmlentities($_GET['soft-search'], ENT_QUOTES, 'UTF-8');
+		$SoftSearch = trim(htmlentities($_GET['soft-search'], ENT_QUOTES, 'UTF-8'));
 	} else {
 		$SoftSearch = false;
 	}
@@ -87,6 +87,9 @@
 <br>
 
 <?php
+
+require $Sitewide['Templates']['Root'].'tickets_exact-match.php';
+
 $SQL = 'SELECT
 	`Tickets`.`Ticket`,
 	`Tickets`.`Title`,
@@ -150,7 +153,7 @@ if ( substr($SQL, -4, 4) == ' OR ' ) {
 	$SQL = substr($SQL, 0, -4);
 }
 $SQL .= ') ';
-if ( $SoftSearch ) {
+if ( !empty($SoftSearch) ) {
 	$SQL .= 'AND (
 		`Tickets`.`Department`   LIKE \'%'.$SoftSearch.'%\' OR
 		`Tickets`.`Line`         LIKE \'%'.$SoftSearch.'%\' OR
@@ -205,7 +208,5 @@ if ( !mysqli_num_rows($Result) ) {
 	</tbody>
 </table>';
 }
-?>
 
-<?php
 	require_once $Sitewide['Templates']['Footer'];
