@@ -35,7 +35,7 @@ if ( !empty($SoftSearch) ) {
 }
 $SQL .= ';';
 $Machine = mysqli_query($Sitewide['Database']['Connection'], $SQL);
-if ( mysqli_num_rows($Machine) === 1 ) {
+if ( $Machine && mysqli_num_rows($Machine) === 1 ) {
 	$Machine = mysqli_fetch_assoc($Machine);
 	echo '
 	<hr>
