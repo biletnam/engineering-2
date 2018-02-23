@@ -22,7 +22,7 @@ if (
 	$SQL .= '`Machines`.`AssetTag`=\''.$SelectedMachine.'\' AND ';
 }
 if ( !empty($SoftSearch) ) {
-	$SQL .= 'AND (
+	$SQL .= '(
 		`Machines`.`Department`  LIKE \'%'.$SoftSearch.'%\' OR
 		`Machines`.`Line`        LIKE \'%'.$SoftSearch.'%\' OR
 		`Machines`.`Machine`     LIKE \'%'.$SoftSearch.'%\' OR
@@ -39,8 +39,10 @@ if ( $Machine && mysqli_num_rows($Machine) === 1 ) {
 	$Machine = mysqli_fetch_assoc($Machine);
 	echo '
 	<hr>
-	<h2>Machine '.$Machine['AssetTag'].'</h2>
 	<div class="whole grid">
+		<div class="whole">
+			<h2>Machine '.$Machine['AssetTag'].'</h2>
+		</div>
 		<div class="medium-half">
 			<p>
 				Department: '.$Machine['Department'].',
