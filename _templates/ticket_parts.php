@@ -2,6 +2,7 @@
 <hr>
 <div class="breaker"></div>
 <div class="grid">
+
 	<h3>Parts</h3>
 	<h4 class="dont-print">Current Parts</h4>
 	<table class="tablesorter">
@@ -48,6 +49,7 @@
 			?>
 		</tbody>
 	</table>
+	
 	<div id="parts-form-container"  class="dont-print">
 		<h4>Search for Parts</h4>
 		<form id="parts-form">
@@ -69,4 +71,15 @@
 			</tbody>
 		</table>
 	</div>
+	
+	<div id="custom-parts-form-container"  class="dont-print">
+		<h4>Add Parts Manually</h4>
+		<form class="manual-part">
+			<input type="hidden" name="ticket" value="<?php echo $Ticket_ID; ?>">
+			<input type="text" name="description" placeholder="Description" style="width:50%">
+			<input type="number" min="1" name="quantity" value="1">
+			<button type="submit"><i class="fa fa-plus"></i> Add</button>
+		</form>
+	</div>
+	
 </div>

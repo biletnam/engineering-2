@@ -41,6 +41,23 @@ $(document).on('submit', '.add-part', function(e) {
 	});
 });
 
+
+$(document).on('submit', '.manual-part', function(e) {
+	e.preventDefault();
+	console.log($(this).serialize());
+	var manualForm = $(this);
+	$.getJSON('api/parts_manual.php?' + $(this).serialize(), function(data) {
+		console.log(data);
+		if ( data.result ) {
+			$('.no-parts-currently-added').remove();
+			$('#current-parts').append('<tr class="clickable"><td>' + manualForm.children('input[name="STRC_CODE"]').val() + '</td><td>' + manualForm.children('input[name="STRC_CODE2"]').val() + '</td><td>' + manualForm.children('input[name="STRC_DESC"]').val() + '</td><td>' + manualForm.children('input[name="quantity"]').val() + '</td><td><form class="remove-part"><input type="hidden" name="ticket" value="' + manualForm.children('input[name="quantity"]').val() + '"><input type="hidden" name="STRC_CODE" value="' + manualForm.children('input[name="STRC_CODE"]').val() + '"><input type="hidden" name="STRC_CODE2" value="' + manualForm.children('input[name="STRC_CODE2"]').val() + '"><input type="hidden" name="STRC_DESC" value="' + manualForm.children('input[name="STRC_DESC"]').val() + '"><input type="submit" value="Remove"></form></td></tr>');
+			$('table.tablesorter').trigger('update');
+		} else {
+			manualForm.children('input[type=submit]').prop('disabled', true).css('color', '#c0392b');
+		}
+	});
+});
+
 $(document).on('submit', '.update-part', function(e) {
 	e.preventDefault();
 	console.log($(this).serialize());
