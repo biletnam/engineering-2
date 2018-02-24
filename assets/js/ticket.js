@@ -55,7 +55,7 @@ $(document).on('submit', '.manual-part', function(e) {
 		if ( data.result ) {
 			$('.no-parts-currently-added').remove();
 			var STRC_CODE   = 'MANUAL_ENTRY';
-			var STRC_CODE2  = 'MANUAL_ENTRY';
+			var STRC_CODE2  = 'MANUAL_ENTRY_' + Math.round(+new Date()/1000);
 			var description = manualForm.children('input[name="description"]').val();
 			var quantity    = manualForm.children('input[name="quantity"]'   ).val();
 			$('#current-parts').append('<tr class="clickable"><td>' + STRC_CODE + '</td><td>' + STRC_CODE2 + '</td><td>' + description + '</td><td>' + quantity + '</td><td><form class="remove-part"><input type="hidden" name="ticket" value="' + quantity + '"><input type="hidden" name="STRC_CODE" value="' + STRC_CODE + '"><input type="hidden" name="STRC_CODE2" value="' + STRC_CODE2 + '"><input type="hidden" name="STRC_DESC" value="' + description + '"><input type="submit" value="Remove"></form></td></tr>');
