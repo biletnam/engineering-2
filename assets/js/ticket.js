@@ -33,7 +33,11 @@ $(document).on('submit', '.add-part', function(e) {
 		console.log(data);
 		if ( data.result ) {
 			$('.no-parts-currently-added').remove();
-			$('#current-parts').append('<tr class="clickable"><td>' + addForm.children('input[name="STRC_CODE"]').val() + '</td><td>' + addForm.children('input[name="STRC_CODE2"]').val() + '</td><td>' + addForm.children('input[name="STRC_DESC"]').val() + '</td><td>' + addForm.children('input[name="quantity"]').val() + '</td><td><form class="remove-part"><input type="hidden" name="ticket" value="' + addForm.children('input[name="quantity"]').val() + '"><input type="hidden" name="STRC_CODE" value="' + addForm.children('input[name="STRC_CODE"]').val() + '"><input type="hidden" name="STRC_CODE2" value="' + addForm.children('input[name="STRC_CODE2"]').val() + '"><input type="hidden" name="STRC_DESC" value="' + addForm.children('input[name="STRC_DESC"]').val() + '"><input type="submit" value="Remove"></form></td></tr>');
+			var STRC_CODE   = addForm.children('input[name="STRC_CODE"]' ).val();
+			var STRC_CODE2  = addForm.children('input[name="STRC_CODE2"]').val();
+			var description = addForm.children('input[name="STRC_DESC"]' ).val();
+			var quantity    = addForm.children('input[name="quantity"]'  ).val();
+			$('#current-parts').append('<tr class="clickable"><td>' + STRC_CODE + '</td><td>' + STRC_CODE2 + '</td><td>' + description + '</td><td>' + quantity + '</td><td><form class="remove-part"><input type="hidden" name="ticket" value="' + quantity + '"><input type="hidden" name="STRC_CODE" value="' + STRC_CODE + '"><input type="hidden" name="STRC_CODE2" value="' + STRC_CODE2 + '"><input type="hidden" name="STRC_DESC" value="' + description + '"><input type="submit" value="Remove"></form></td></tr>');
 			$('table.tablesorter').trigger('update');
 		} else {
 			addForm.children('input[type=submit]').prop('disabled', true).css('color', '#c0392b');
@@ -50,7 +54,11 @@ $(document).on('submit', '.manual-part', function(e) {
 		console.log(data);
 		if ( data.result ) {
 			$('.no-parts-currently-added').remove();
-			$('#current-parts').append('<tr class="clickable"><td>' + manualForm.children('input[name="STRC_CODE"]').val() + '</td><td>' + manualForm.children('input[name="STRC_CODE2"]').val() + '</td><td>' + manualForm.children('input[name="STRC_DESC"]').val() + '</td><td>' + manualForm.children('input[name="quantity"]').val() + '</td><td><form class="remove-part"><input type="hidden" name="ticket" value="' + manualForm.children('input[name="quantity"]').val() + '"><input type="hidden" name="STRC_CODE" value="' + manualForm.children('input[name="STRC_CODE"]').val() + '"><input type="hidden" name="STRC_CODE2" value="' + manualForm.children('input[name="STRC_CODE2"]').val() + '"><input type="hidden" name="STRC_DESC" value="' + manualForm.children('input[name="STRC_DESC"]').val() + '"><input type="submit" value="Remove"></form></td></tr>');
+			var STRC_CODE   = 'MANUAL_ENTRY';
+			var STRC_CODE2  = 'MANUAL_ENTRY';
+			var description = manualForm.children('input[name="description"]').val();
+			var quantity    = manualForm.children('input[name="quantity"]'   ).val();
+			$('#current-parts').append('<tr class="clickable"><td>' + STRC_CODE + '</td><td>' + STRC_CODE2 + '</td><td>' + description + '</td><td>' + quantity + '</td><td><form class="remove-part"><input type="hidden" name="ticket" value="' + quantity + '"><input type="hidden" name="STRC_CODE" value="' + STRC_CODE + '"><input type="hidden" name="STRC_CODE2" value="' + STRC_CODE2 + '"><input type="hidden" name="STRC_DESC" value="' + description + '"><input type="submit" value="Remove"></form></td></tr>');
 			$('table.tablesorter').trigger('update');
 		} else {
 			manualForm.children('input[type=submit]').prop('disabled', true).css('color', '#c0392b');
