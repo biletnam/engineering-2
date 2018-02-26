@@ -7,7 +7,7 @@ function Department_Reorder($Connection, $Department, $Order) {
 	$Order      = htmlentities($Order,      ENT_QUOTES, 'UTF-8');
 	$DepartmentExists = Department_Exists($Connection, $Department);
 	if ( !$DepartmentExists ) {
-		return array('warning' => 'Sorry, that department does not exist.');
+		return array('warning' => 'Sorry, that Department does not exist.');
 	}
 
 	////	Enable the Department

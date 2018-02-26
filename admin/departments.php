@@ -80,6 +80,7 @@
 		echo '
 				</form>
 			</td>
+			<td><button onclick="window.location.href=\'lines.php?department='.$Department['Department'].'\'"><i class="fa fa-cogs"></i> Manage Lines</button>
 		</tr>';
 	}
 	echo '</tbody>
