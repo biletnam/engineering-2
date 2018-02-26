@@ -4,8 +4,8 @@
 	$Page['Title'] = 'Create a User';
 
 	if (
-		( $Sitewide['Authenticated']['Role'] == 'Admin' ) ||
-		(
+		!( $Sitewide['Authenticated']['Role'] == 'Admin' ) ||
+		!(
 			$Sitewide['Authenticated']['Department'] == 'Engineering' &&
 			$Sitewide['Authenticated']['Role'] == 'Manager'
 		)
