@@ -43,7 +43,8 @@
 	}
 
 	////	Lines
-	$SQL = 'SELECT * FROM `Lines` ORDER BY `Order` ASC, `Line` ASC;';
+	$Department = htmlentities($_GET['department'], ENT_QUOTES, 'UTF-8');
+	$SQL = 'SELECT * FROM `Lines` WHERE `Department`=\''.$Department.'\' ORDER BY `Order` ASC, `Line` ASC;';
 	$Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
 	echo '<table class="tablesorter">
 	<thead>
