@@ -53,6 +53,7 @@
 			<th>Order</th>
 			<th>Set</th>
 			<th>Active</th>
+			<th>Manage Machines</th>
 		</tr>
 	</thead>
 	<tbody>';
@@ -81,7 +82,7 @@
 		echo '
 				</form>
 			</td>
-			<td><button onclick="window.location.href=\'lines.php?line='.$Line['Line'].'\'"><i class="fa fa-cogs"></i> Manage Lines</button>
+			<td><button onclick="window.location.href=\'machines.php?department='.$Department.'&line='.$Line['Line'].'\'"><i class="fa fa-cogs"></i> Manage Machines</button>
 		</tr>';
 	}
 	echo '</tbody>

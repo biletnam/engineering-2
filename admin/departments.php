@@ -52,6 +52,7 @@
 			<th>Order</th>
 			<th>Set</th>
 			<th>Active</th>
+			<th>Manage Lines</th>
 		</tr>
 	</thead>
 	<tbody>';
