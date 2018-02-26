@@ -43,7 +43,7 @@
 	}
 
 	////	Departments
-	$SQL = 'SELECT * FROM `Departments` ORDER BY `Department` ASC;';
+	$SQL = 'SELECT * FROM `Departments` ORDER BY `Order` ASC, `Department` ASC;';
 	$Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
 	echo '<table class="tablesorter">
 	<thead>
