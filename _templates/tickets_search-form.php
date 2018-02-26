@@ -9,7 +9,7 @@
 	<select name="department" class="whole" required>
 		<option value="*"<?php if ( $SelectedDepartment == '*' || $SelectedDepartment == 'Engineering' ) echo ' selected="selected"'; ?>>All Departments</option>
 		<?php
-			$SQL = 'SELECT * FROM `Departments` WHERE `Active`=\'1\' ORDER BY `Order` DESC, `Department` ASC;';
+			$SQL = 'SELECT * FROM `Departments` WHERE `Active`=\'1\' ORDER BY `Order` ASC, `Department` ASC;';
 			$Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
 			$DepartmentSelected = false;
 			while ( $Department = mysqli_fetch_assoc($Result) ) {
@@ -39,7 +39,7 @@
 				echo '<option value="*" disabled selected>All Lines</option>';
 			} else {
 				echo '<option value="*" selected>All Lines</option>';
-				$SQL = 'SELECT * FROM `Lines` WHERE `Active`=\'1\' AND `Department`=\''.$SelectedDepartment.'\' ORDER BY `Order` DESC, `Department` ASC, `Line` ASC;';
+				$SQL = 'SELECT * FROM `Lines` WHERE `Active`=\'1\' AND `Department`=\''.$SelectedDepartment.'\' ORDER BY `Order` ASC, `Department` ASC, `Line` ASC;';
 				$Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
 				while ( $Line = mysqli_fetch_assoc($Result) ) {
 					$Selected = false;
@@ -65,7 +65,7 @@
 				echo '<option value="*" disabled selected>All Machines</option>';
 			} else {
 				echo '<option value="*" selected>All Machines</option>';
-				$SQL = 'SELECT * FROM `Machines` WHERE `Active`=\'1\' AND `Department`=\''.$SelectedDepartment.'\' AND `Line`=\''.$SelectedLine.'\' ORDER BY `Order` DESC, `Department` ASC, `Line` ASC, `Machine` ASC, `AssetTag` ASC;';
+				$SQL = 'SELECT * FROM `Machines` WHERE `Active`=\'1\' AND `Department`=\''.$SelectedDepartment.'\' AND `Line`=\''.$SelectedLine.'\' ORDER BY `Order` ASC, `Department` ASC, `Line` ASC, `Machine` ASC, `AssetTag` ASC;';
 				$Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
 				while ( $Machine = mysqli_fetch_assoc($Result) ) {
 					if ( $SelectedMachine == $Machine['AssetTag'] ) {
@@ -98,7 +98,7 @@
 					`Departments`.`Key`='Department' AND
 					`Departments`.`Value` LIKE '%Engineering%' AND
 					`Names`.`Key`='Name'
-				ORDER BY `Names`.`Value` ASC";
+				ORDER BY `Names`.`Value` ASC;";
 			$Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
 			while ( $Engineer = mysqli_fetch_assoc($Result) ) {
 				if ( $SelectedAssignee == $Engineer['Username'] ) {
