@@ -19,7 +19,7 @@
 
 	////	Handle Transactions
 	if (
-		!empty($_POST['department_order'])
+		isset($_POST['department_order'])
 	) {
 		$Order      = $_POST['department_order'];
 		$Department = $_POST['department_toggle'];
