@@ -1,6 +1,6 @@
 <?php
 
-function Puff_Department_Disable($Connection, $Department) {
+function Department_Disable($Connection, $Department) {
 
 	////	Check Department Existence
 	$Department = htmlentities($Department, ENT_QUOTES, 'UTF-8');
