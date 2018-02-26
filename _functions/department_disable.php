@@ -3,7 +3,7 @@
 function Puff_Department_Disable($Connection, $Department) {
 
 	////	Check Department Existence
-	$Department = htmlentites($Department, ENT_QUOTES, 'UTF-8');
+	$Department = htmlentities($Department, ENT_QUOTES, 'UTF-8');
 	$DepartmentExists = Department_Exists($Connection, $Department, true);
 	if ( !$DepartmentExists ) {
 		return array('warning' => 'Sorry, that Department does not exist. I guess that means it\'s sort of disabled already?');
