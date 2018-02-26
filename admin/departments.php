@@ -19,16 +19,24 @@
 
 	////	Handle Transactions
 	if (
+		!empty($_POST['department_order'])
+	) {
+		$Order      = $_POST['department_order'];
+		$Department = $_POST['department_toggle'];
+		$Result = Department_Disable($Sitewide['Database']['Connection'], $Department, $Order);
+		echo '<h3 class="color-nephritis">The Department "'.$Department.'" has been updated.</h3>';
+	} else if (
 		!empty($_POST['department_toggle'])
 	) {
-		$DepartmentEnabled = Department_Exists($Sitewide['Database']['Connection'], $Username, true);
-		$DepartmentDisabled = Department_Exists($Sitewide['Database']['Connection'], $Username, false);
+		$Department = $_POST['department_toggle'];
+		$DepartmentEnabled = Department_Exists($Sitewide['Database']['Connection'], $Department, true);
+		$DepartmentDisabled = Department_Exists($Sitewide['Database']['Connection'], $Department, false);
 		if ( $DepartmentEnabled ) {
-			$Result = Department_Disable($Sitewide['Database']['Connection'], $Username);
-			echo '<h3 class="color-nephritis">The user '.$Username.' has been disabled.</h3>';
+			$Result = Department_Disable($Sitewide['Database']['Connection'], $Department);
+			echo '<h3 class="color-nephritis">The Department "'.$Department.'" has been disabled.</h3>';
 		} else if ( $DepartmentDisabled ) {
-			$Result = Department_Enable($Sitewide['Database']['Connection'], $Username);
-			echo '<h3 class="color-nephritis">The user '.$Username.' has been re-enabled.</h3>';
+			$Result = Department_Enable($Sitewide['Database']['Connection'], $Department);
+			echo '<h3 class="color-nephritis">The Department "'.$Department.'" has been re-enabled.</h3>';
 		} else {
 			echo '<h3 class="color-pomegranate">Sorry, that Department doesn\'t seem to exist.</h3>';
 		}
@@ -52,7 +60,8 @@
 			<td>'.$Department['Department'].'</td>
 			<td>
 				<form method="POST">
-					<input type="number" min="0" name="department_order_'.$Department['Department'].'" value="'.$Department['Order'].'">
+					<input type="hidden" name="department_toggle" value="'.$Department['Department'].'">
+					<input type="number" min="0" name="department_order" value="'.$Department['Order'].'">
 			</td>
 			<td>
 					<button type="submit"><i class="fa fa-sort"></i> Re-order</button>
