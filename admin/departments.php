@@ -42,6 +42,7 @@
 		<tr>
 			<th>Department</th>
 			<th>Order</th>
+			<th>Set</th>
 			<th>Active</th>
 		</tr>
 	</thead>
@@ -52,7 +53,9 @@
 			<td>
 				<form method="POST">
 					<input type="number" min="0" name="department_order_'.$Department['Department'].'" value="'.$Department['Order'].'">
-					<button type="submit"><i class="fa fa-ban"></i> Disable</button>
+			</td>
+			<td>
+					<button type="submit"><i class="fa fa-sort"></i> Re-order</button>
 				</form>
 			</td>
 			<td>
