@@ -61,7 +61,7 @@
 			<td>
 				<form method="POST">
 					<input type="hidden" name="department_toggle" value="'.$Department['Department'].'">
-					<input type="number" min="0" name="department_order" value="'.$Department['Order'].'">
+					<input type="number" min="0" max="999" step="1" name="department_order" value="'.$Department['Order'].'">
 			</td>
 			<td>
 					<button type="submit"><i class="fa fa-sort"></i> Re-order</button>
