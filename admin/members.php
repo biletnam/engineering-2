@@ -3,13 +3,19 @@
 	$Page['Type']  = 'Admin';
 	$Page['Title'] = 'Manage Users';
 
-	if ( $Sitewide['Authenticated']['Role'] != 'Admin' ) {
+	if (
+		( $Sitewide['Authenticated']['Role'] == 'Admin' ) ||
+		(
+			$Sitewide['Authenticated']['Department'] == 'Engineering' &&
+			$Sitewide['Authenticated']['Role'] == 'Manager'
+		)
+	) {
 		header('Location: '.$Sitewide['Settings']['Site Root'].'log_in.php?redirect='.urlencode($Sitewide['Request']['Path']), true, 302);
-		exit();
+		exit;
 	}
 
 	require_once $Sitewide['Templates']['Header'];
-	echo '<h2>Manage Users</h2>';
+	echo '<h2>Manage Users <a class="float-right" href="'.$Sitewide['Settings']['Site Root'].'admin/member_create.php"><i class="fa fa-user-plus"></i> Create a User</a></h2>';
 
 	////	Handle Transactions
 	if (

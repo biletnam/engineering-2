@@ -8,8 +8,14 @@
 			echo '<a class="navlink engineering assigned" href="'.$Sitewide['Settings']['Site Root'].'tickets.php?assignee='.$Sitewide['Authenticated']['Username'].'"><i class="fa fa-users"></i> Assigned To</a>&emsp;';
 		}
 
-		if ( $Sitewide['Authenticated']['Role'] == 'Admin' ) {
-			echo '<a class="navlink admin member-create" href="'.$Sitewide['Settings']['Site Root'].'admin/member_create.php"><i class="fa fa-user-plus"></i> Create a User</a>&emsp;';
+		if (
+			( $Sitewide['Authenticated']['Role'] == 'Admin' ) ||
+			(
+				$Sitewide['Authenticated']['Department'] == 'Engineering' &&
+				$Sitewide['Authenticated']['Role'] == 'Manager'
+			)
+		) {
+			echo '<a class="navlink admin manage" href="'.$Sitewide['Settings']['Site Root'].'admin/departments.php"><i class="fa fa-cogs"></i> Manage Departments/Lines/Machines</a>&emsp;';
 			echo '<a class="navlink admin members" href="'.$Sitewide['Settings']['Site Root'].'admin/members.php"><i class="fa fa-users"></i> Manage Users</a>&emsp;';
 		}
 

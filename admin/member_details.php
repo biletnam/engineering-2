@@ -3,7 +3,13 @@
 	$Page['Type']  = 'Admin';
 	$Page['Title'] = 'Change a Users Details';
 
-	if ( $Sitewide['Authenticated']['Role'] != 'Admin' ) {
+	if (
+		( $Sitewide['Authenticated']['Role'] == 'Admin' ) ||
+		(
+			$Sitewide['Authenticated']['Department'] == 'Engineering' &&
+			$Sitewide['Authenticated']['Role'] == 'Manager'
+		)
+	) {
 		header('Location: '.$Sitewide['Settings']['Site Root'].'log_in.php?redirect='.urlencode($Sitewide['Request']['Path']), true, 302);
 		exit;
 	}
