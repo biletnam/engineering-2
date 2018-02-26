@@ -12,9 +12,7 @@ function Department_Reorder($Connection, $Department, $Order) {
 
 	////	Enable the Department
 	$SQL = 'UPDATE `Departments` SET `Order`=\''.$Order.'\' WHERE `Department`=\''.$Department.'\';';
-	var_dump($SQL);
 	$Result = mysqli_query($Connection, $SQL);
-	var_dump($Result);
 	return $Result;
 
 }

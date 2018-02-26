@@ -23,7 +23,7 @@
 	) {
 		$Order      = $_POST['department_order'];
 		$Department = $_POST['department_toggle'];
-		$Result = Department_Disable($Sitewide['Database']['Connection'], $Department, $Order);
+		$Result = Department_Reorder($Sitewide['Database']['Connection'], $Department, $Order);
 		echo '<h3 class="color-nephritis">The Department "'.$Department.'" has been updated.</h3>';
 	} else if (
 		!empty($_POST['department_toggle'])
