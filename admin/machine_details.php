@@ -170,6 +170,7 @@ No need to update linked tickets.';
 		?>
 	</select>
 	
+	<div class="clear"></div>
 	<div class="medium-third">
 		<h3>AssetTag</h3>
 		<p class="color-pomegranate">WARNING: This will affect all linked tickets.</p>
