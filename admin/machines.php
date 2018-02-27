@@ -79,7 +79,7 @@
 		echo '
 				</form>
 			</td>
-			<td><button onclick="window.location.href=\'machine_details.php?assettag='.$Member['AssetTag'].'\'"><i class="fa fa-info-circle"></i> Change Details</button>
+			<td><button onclick="window.location.href=\'machine_details.php?assettag='.$Machine['AssetTag'].'\'"><i class="fa fa-info-circle"></i> Change Details</button>
 		</tr>';
 	}
 	echo '</tbody>
