@@ -170,7 +170,7 @@ No need to update linked tickets.';
 	<input type="hidden" name="assettag_original" value="<?php echo $Machine['AssetTag']; ?>" required>
 	<input type="text" class="whole medium-half" name="assettag_new" value="<?php echo $Machine['AssetTag']; ?>" required>
 
-	<br>
+	<div class="clear"></div>
 	<input type="submit" class="whole medium-half" value="Change">
 
 </form>
