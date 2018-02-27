@@ -54,7 +54,10 @@ WHERE
 		$Step2Affected = mysqli_affected_rows($Sitewide['Database']['Connection']);
 		
 		// Step 3. Update linked Tickets
-		if ( $AssetTag_Original != $AssetTag_New ) {
+		if (
+			$Step2Result &&
+			$AssetTag_Original != $AssetTag_New
+		) {
 			$SQL = '
 UPDATE
 	`Tickets`
@@ -72,17 +75,19 @@ WHERE
 		echo '<pre>
 Updating the machines details...
 '.json_encode($Step2Result).'
-'.$Step2Affected.' machines details were updated.';
+'.$Step2Affected.' machines details were updated.
+';
 		
-		if ( $AssetTag_Original != $AssetTag_New ) {
+		if (
+			$Step2Result &&
+			$AssetTag_Original != $AssetTag_New
+		) {
 			echo '
-
 Updating linked tickets...
 '.json_encode($Step3Result).'
 '.$Step3Affected.' linked tickets were updated.';
 		} else {
 			echo '
-
 No need to update linked tickets.';
 		}
 		
