@@ -164,11 +164,9 @@ No need to update linked tickets.';
 				echo '<option value="'.$Line['Line'].'"'.$Selected .'>'.$Line['Line'].'</option>';
 			}
 			
-			echo '<option value="Orphaned"';
 			if ( !$LineSelected ) {
-				echo ' selected="selected"';
+				echo '<option value="Orphaned" selected="selected">Orphaned</option>';
 			}
-			echo '>Orphaned</option>';
 			
 		?>
 	</select>
