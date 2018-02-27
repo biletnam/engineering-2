@@ -3,13 +3,7 @@
 	$Page['Type']  = 'Admin';
 	$Page['Title'] = 'Manage Departments';
 
-	if (
-		!( $Sitewide['Authenticated']['Role'] == 'Admin' ) &&
-		!(
-			$Sitewide['Authenticated']['Department'] == 'Engineering' &&
-			$Sitewide['Authenticated']['Role'] == 'Manager'
-		)
-	) {
+	if ( !isEngManager($Sitewide['Authenticated']) ) {
 		header('Location: '.$Sitewide['Settings']['Site Root'].'log_in.php?redirect='.urlencode($Sitewide['Request']['Path']), true, 302);
 		exit;
 	}

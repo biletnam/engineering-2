@@ -65,7 +65,7 @@
 				echo '<option value="*" disabled selected>All Machines</option>';
 			} else {
 				echo '<option value="*" selected>All Machines</option>';
-				$SQL = 'SELECT * FROM `Machines` WHERE `Active`=\'1\' AND `Department`=\''.$SelectedDepartment.'\' AND `Line`=\''.$SelectedLine.'\' ORDER BY `Order` ASC, `Department` ASC, `Line` ASC, `Machine` ASC, `AssetTag` ASC;';
+				$SQL = 'SELECT * FROM `Machines` WHERE `Active`=\'1\' AND `Department`=\''.$SelectedDepartment.'\' AND `Line`=\''.$SelectedLine.'\' ORDER BY `Order` ASC, `Machine` ASC, `AssetTag` ASC;';
 				$Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
 				while ( $Machine = mysqli_fetch_assoc($Result) ) {
 					if ( $SelectedMachine == $Machine['AssetTag'] ) {
