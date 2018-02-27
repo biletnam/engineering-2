@@ -50,7 +50,6 @@ SET
     `AssetTag`=\''.$AssetTag_New.'\'
 WHERE
 	`AssetTag` = \''.$AssetTag_Original.'\';';
-		var_dump($SQL);
 		$Step2Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
 		$Step2Affected = mysqli_affected_rows($Sitewide['Database']['Connection']);
 		
@@ -63,20 +62,33 @@ SET
     `AssetTag`=\''.$AssetTag_New.'\'
 WHERE
 	`AssetTag` = \''.$AssetTag_Original.'\';';
-			var_dump($SQL);
-			//$Step3Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
+			$Step3Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
+			$Step3Affected = mysqli_affected_rows($Sitewide['Database']['Connection']);
 		}
 		
+		// Step 4. Echo results
 		echo '<h2 class="color-nephritis">The details for the machine have been changed.</h2>';
+		
 		echo '<pre>
 Updating the machines details...
 '.json_encode($Step2Result).'
-'.$Step2Affected.' machines details were updated.
+'.$Step2Affected.' machines details were updated.';
+		
+		if ( $AssetTag_Original != $AssetTag_New ) {
+			echo '
 
 Updating linked tickets...
 '.json_encode($Step3Result).'
-'.$Step3Affected.' linked tickets were updated.
+'.$Step3Affected.' linked tickets were updated.';
+		} else {
+			echo '
+
+No need to update linked tickets.';
+		}
+		
+		echo '
 </pre>';
+		
 		echo '<button class="navlink admin" onclick="window.location.href=\'machine_details.php?assettag='.$AssetTag_New.'\'"><i class="fa fa-arrow-right"></i> Continue</button>';
 
 	} else {
