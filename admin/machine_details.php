@@ -144,7 +144,10 @@ No need to update linked tickets.';
 		?>
 	</select>
 
-	<h3>Line</h3>
+	<div class="clear"></div>
+	<div class="medium-third">
+		<h3 class="no-margin">Line</h3>
+	</div>
 	<select name="line" class="whole medium-half" required>
 		<?php
 			
@@ -172,7 +175,7 @@ No need to update linked tickets.';
 	
 	<div class="clear"></div>
 	<div class="medium-third">
-		<h3>AssetTag</h3>
+		<h3 class="no-margin">AssetTag</h3>
 		<p class="color-pomegranate">WARNING: This will affect all linked tickets.</p>
 		<input type="hidden" name="assettag_original" value="<?php echo $Machine['AssetTag']; ?>" required>
 	</div>

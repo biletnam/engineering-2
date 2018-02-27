@@ -13,6 +13,10 @@ a {
     background: #e74c3c;
 }
 
+.no-margin {
+	margin: 0;
+}
+
 @media print {
     header, nav, footer, .dont-print {
 		display: none;
