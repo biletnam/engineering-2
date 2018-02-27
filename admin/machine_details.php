@@ -99,22 +99,22 @@ No need to update linked tickets.';
 <form method="post" class="grid">
 
 	<h3>Machine</h3>
-	<input type="text" class="whole" name="machine" value="<?php echo $Machine['Machine']; ?>">
+	<input type="text" class="whole medium-half" name="machine" value="<?php echo $Machine['Machine']; ?>">
 
 	<h3>Description</h3>
-	<input type="text" class="whole" name="description" value="<?php echo $Machine['Description']; ?>">
+	<input type="text" class="whole medium-half" name="description" value="<?php echo $Machine['Description']; ?>">
 
 	<h3>Make</h3>
-	<input type="text" class="whole" name="make" value="<?php echo $Machine['Make']; ?>">
+	<input type="text" class="whole medium-half" name="make" value="<?php echo $Machine['Make']; ?>">
 
 	<h3>Model</h3>
-	<input type="text" class="whole" name="model" value="<?php echo $Machine['Model']; ?>">
+	<input type="text" class="whole medium-half" name="model" value="<?php echo $Machine['Model']; ?>">
 
 	<h3>Serial Number</h3>
-	<input type="text" class="whole" name="serialno" value="<?php echo $Machine['SerialNo']; ?>">
+	<input type="text" class="whole medium-half" name="serialno" value="<?php echo $Machine['SerialNo']; ?>">
 
 	<h3>Department</h3>
-	<select name="department" class="whole" required>
+	<select name="department" class="whole medium-half" required>
 		<?php
 			
 			$SQL = 'SELECT * FROM `Departments` WHERE `Active`=\'1\' ORDER BY `Order` ASC, `Department` ASC;';
@@ -140,7 +140,7 @@ No need to update linked tickets.';
 	</select>
 
 	<h3>Line</h3>
-	<select name="line" class="whole" required>
+	<select name="line" class="whole medium-half" required>
 		<?php
 			
 			$SQL = 'SELECT * FROM `Lines` WHERE `Department`=\''.$Machine['Department'].'\' AND `Active`=\'1\' ORDER BY `Order` ASC, `Line` ASC;';
@@ -167,8 +167,8 @@ No need to update linked tickets.';
 
 	<h3>AssetTag</h3>
 	<p class="color-pomegranate">WARNING: This will affect all linked tickets.</p>
-	<input type="hidden" class="whole" name="assettag_original" value="<?php echo $Machine['AssetTag']; ?>" required>
-	<input type="text" class="whole" name="assettag_new" value="<?php echo $Machine['AssetTag']; ?>" required>
+	<input type="hidden" name="assettag_original" value="<?php echo $Machine['AssetTag']; ?>" required>
+	<input type="text" class="whole medium-half" name="assettag_new" value="<?php echo $Machine['AssetTag']; ?>" required>
 
 	<input type="submit" value="Change">
 
