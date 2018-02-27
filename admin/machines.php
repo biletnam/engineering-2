@@ -12,7 +12,7 @@
 
 	require_once $Sitewide['Templates']['Header'];
 	echo '<h2>Manage Machines</h2>';
-	echo '<p>You are currently managing the department &quot;'.$Department.'&quot;, Line &quot;'.$Line.'&quot;</p>';
+	echo '<p>You are currently managing the department &quot;'.$Department.'&quot;, Line &quot;'.$Line.'&quot;.</p>';
 
 	////	Handle Transactions
 	if (
