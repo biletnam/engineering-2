@@ -2,6 +2,8 @@
 	require_once __DIR__.'/../_puff/sitewide.php';
 	$Page['Type']  = 'Admin';
 	$Page['Title'] = 'Manage Machines';
+	$Department = htmlentities($_GET['department'], ENT_QUOTES, 'UTF-8');
+	$Line       = htmlentities($_GET['line'],       ENT_QUOTES, 'UTF-8');
 
 	if ( !isEngManager($Sitewide['Authenticated']) ) {
 		header('Location: '.$Sitewide['Settings']['Site Root'].'log_in.php?redirect='.urlencode($Sitewide['Request']['Path']), true, 302);
@@ -10,6 +12,7 @@
 
 	require_once $Sitewide['Templates']['Header'];
 	echo '<h2>Manage Machines</h2>';
+	echo '<p>You are currently managing the department &quot;'.$Department.'&quot;, Line &quot;'.$Line.'&quot;</p>';
 
 	////	Handle Transactions
 	if (
@@ -37,8 +40,6 @@
 	}
 
 	////	Machines
-	$Department = htmlentities($_GET['department'], ENT_QUOTES, 'UTF-8');
-	$Line       = htmlentities($_GET['line'], ENT_QUOTES, 'UTF-8');
 	$SQL = 'SELECT * FROM `Machines` WHERE `Department`=\''.$Department.'\' AND `Line`=\''.$Line.'\' ORDER BY `Order` ASC, `Machine` ASC, `AssetTag` ASC;';
 	$Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
 	echo '<table class="tablesorter">
