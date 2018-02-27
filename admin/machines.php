@@ -45,19 +45,21 @@
 	<thead>
 		<tr>
 			<th>Machine</th>
+			<th>AssetTag</th>
 			<th>Order</th>
 			<th>Set</th>
 			<th>Active</th>
-			<th>Manage Machines</th>
+			<th>Change Details</th>
 		</tr>
 	</thead>
 	<tbody>';
 	while ( $Machine = mysqli_fetch_assoc($Result) ) {
 		echo '<tr>
 			<td>'.$Machine['Machine'].'</td>
+			<td>'.$Machine['AssetTag'].'</td>
 			<td>
 				<form method="POST">
-					<input type="hidden" name="line_toggle" value="'.$Machine['Machine'].'">
+					<input type="hidden" name="line_toggle" value="'.$Machine['AssetTag'].'">
 					<input type="number" min="0" max="999" step="1" name="line_order" value="'.$Machine['Order'].'">
 			</td>
 			<td>
@@ -66,7 +68,7 @@
 			</td>
 			<td>
 				<form method="POST">
-					<input type="hidden" name="line_toggle" value="'.$Machine['Machine'].'">';
+					<input type="hidden" name="line_toggle" value="'.$Machine['AssetTag'].'">';
 		if ( $Machine['Active'] ) {
 			echo '
 					<button type="submit"><i class="fa fa-ban"></i> Disable</button>';
@@ -77,7 +79,7 @@
 		echo '
 				</form>
 			</td>
-			<td><button onclick="window.location.href=\'machines.php?department='.$Department.'&line='.$Machine['Machine'].'\'"><i class="fa fa-cogs"></i> Manage Machines</button>
+			<td><button onclick="window.location.href=\'machine_details.php?assettag='.$Member['AssetTag'].'\'"><i class="fa fa-info-circle"></i> Change Details</button>
 		</tr>';
 	}
 	echo '</tbody>
