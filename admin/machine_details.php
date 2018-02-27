@@ -136,6 +136,7 @@ No need to update linked tickets.';
 	<div class="clear"></div>
 	<div class="medium-third">
 		<h3 class="no-margin">Department</h3>
+		<p class="color-pumpkin">WARNING: Changing the Department will not affect currently open tickets, and may orphan the Machines Line.</p>
 	</div>
 	<select name="department" class="whole medium-half" required>
 		<?php
@@ -165,6 +166,7 @@ No need to update linked tickets.';
 	<div class="clear"></div>
 	<div class="medium-third">
 		<h3 class="no-margin">Line</h3>
+		<p class="color-pumpkin">WARNING: Changing the Line will not affect currently open tickets.</p>
 	</div>
 	<select name="line" class="whole medium-half" required>
 		<?php
@@ -192,7 +194,7 @@ No need to update linked tickets.';
 	<div class="clear"></div>
 	<div class="medium-third">
 		<h3 class="no-margin">AssetTag</h3>
-		<p class="color-pomegranate">WARNING: This will affect all linked tickets.</p>
+		<p class="color-pomegranate">WARNING: Changing the AssetTag will affect all linked tickets.</p>
 		<input type="hidden" name="assettag_original" value="<?php echo $Machine['AssetTag']; ?>" required>
 	</div>
 	<input type="text" class="whole medium-half" name="assettag_new" value="<?php echo $Machine['AssetTag']; ?>" required>
