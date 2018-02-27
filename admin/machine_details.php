@@ -169,13 +169,16 @@ No need to update linked tickets.';
 			
 		?>
 	</select>
-
-	<h3>AssetTag</h3>
-	<p class="color-pomegranate">WARNING: This will affect all linked tickets.</p>
-	<input type="hidden" name="assettag_original" value="<?php echo $Machine['AssetTag']; ?>" required>
+	
+	<div class="medium-third">
+		<h3>AssetTag</h3>
+		<p class="color-pomegranate">WARNING: This will affect all linked tickets.</p>
+		<input type="hidden" name="assettag_original" value="<?php echo $Machine['AssetTag']; ?>" required>
+	</div>
 	<input type="text" class="whole medium-half" name="assettag_new" value="<?php echo $Machine['AssetTag']; ?>" required>
 
 	<div class="clear"></div>
+	<div class="medium-third"></div>
 	<input type="submit" class="whole medium-half" value="Change">
 
 </form>
