@@ -98,22 +98,22 @@ No need to update linked tickets.';
 
 <form method="post" class="grid">
 
-	<h3>Machine</h3>
+	<h3 class="whole medium-half">Machine</h3>
 	<input type="text" class="whole medium-half" name="machine" value="<?php echo $Machine['Machine']; ?>">
 
-	<h3>Description</h3>
+	<h3 class="whole medium-half">Description</h3>
 	<input type="text" class="whole medium-half" name="description" value="<?php echo $Machine['Description']; ?>">
 
-	<h3>Make</h3>
+	<h3 class="whole medium-half">Make</h3>
 	<input type="text" class="whole medium-half" name="make" value="<?php echo $Machine['Make']; ?>">
 
-	<h3>Model</h3>
+	<h3 class="whole medium-half">Model</h3>
 	<input type="text" class="whole medium-half" name="model" value="<?php echo $Machine['Model']; ?>">
 
-	<h3>Serial Number</h3>
+	<h3 class="whole medium-half">Serial Number</h3>
 	<input type="text" class="whole medium-half" name="serialno" value="<?php echo $Machine['SerialNo']; ?>">
 
-	<h3>Department</h3>
+	<h3 class="whole medium-half">Department</h3>
 	<select name="department" class="whole medium-half" required>
 		<?php
 			
