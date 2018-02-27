@@ -103,22 +103,40 @@ No need to update linked tickets.';
 
 <form method="post" class="grid">
 
-	<h3>Machine</h3>
+	<div class="clear"></div>
+	<div class="medium-third">
+		<h3 class="no-margin">Machine</h3>
+	</div>
 	<input type="text" class="whole medium-half" name="machine" value="<?php echo $Machine['Machine']; ?>">
 
-	<h3>Description</h3>
+	<div class="clear"></div>
+	<div class="medium-third">
+		<h3 class="no-margin">Description</h3>
+	</div>
 	<input type="text" class="whole medium-half" name="description" value="<?php echo $Machine['Description']; ?>">
 
-	<h3>Make</h3>
+	<div class="clear"></div>
+	<div class="medium-third">
+		<h3 class="no-margin">Make</h3>
+	</div>
 	<input type="text" class="whole medium-half" name="make" value="<?php echo $Machine['Make']; ?>">
 
-	<h3>Model</h3>
+	<div class="clear"></div>
+	<div class="medium-third">
+		<h3 class="no-margin">Model</h3>
+	</div>
 	<input type="text" class="whole medium-half" name="model" value="<?php echo $Machine['Model']; ?>">
 
-	<h3>Serial Number</h3>
+	<div class="clear"></div>
+	<div class="medium-third">
+		<h3 class="no-margin">Serial Number</h3>
+	</div>
 	<input type="text" class="whole medium-half" name="serialno" value="<?php echo $Machine['SerialNo']; ?>">
 
-	<h3>Department</h3>
+	<div class="clear"></div>
+	<div class="medium-third">
+		<h3 class="no-margin">Department</h3>
+	</div>
 	<select name="department" class="whole medium-half" required>
 		<?php
 			
