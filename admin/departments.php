@@ -53,7 +53,7 @@
 	while ( $Department = mysqli_fetch_assoc($Result) ) {
 		echo '<tr>
 			<td>'.$Department['Department'].'</td>
-			<td>
+			<td data-text="'.$Department['Order'].'">
 				<form method="POST">
 					<input type="hidden" name="department_toggle" value="'.$Department['Department'].'">
 					<input type="number" min="0" max="999" step="1" name="department_order" value="'.$Department['Order'].'">

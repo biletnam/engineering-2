@@ -58,7 +58,7 @@
 		echo '<tr>
 			<td>'.$Machine['Machine'].'</td>
 			<td>'.$Machine['AssetTag'].'</td>
-			<td>
+			<td data-text="'.$Machine['Order'].'">
 				<form method="POST">
 					<input type="hidden" name="line_toggle" value="'.$Machine['AssetTag'].'">
 					<input type="number" min="0" max="999" step="1" name="line_order" value="'.$Machine['Order'].'">
