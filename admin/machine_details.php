@@ -96,7 +96,7 @@ No need to update linked tickets.';
 
 <h2>Change the Details for <?php echo $AssetTag; ?></h2>
 
-<form method="post">
+<form method="post" class="grid">
 
 	<h3>Machine</h3>
 	<input type="text" class="whole" name="machine" value="<?php echo $Machine['Machine']; ?>">
@@ -143,7 +143,7 @@ No need to update linked tickets.';
 	<select name="line" class="whole" required>
 		<?php
 			
-			$SQL = 'SELECT * FROM `Lines` WHERE `Department`=\''.$Machine['Department'].'\' AND Active`=\'1\' ORDER BY `Order` ASC, `Line` ASC;';
+			$SQL = 'SELECT * FROM `Lines` WHERE `Department`=\''.$Machine['Department'].'\' AND `Active`=\'1\' ORDER BY `Order` ASC, `Line` ASC;';
 			$Result = mysqli_query($Sitewide['Database']['Connection'], $SQL);
 			$LineSelected = false;
 			
